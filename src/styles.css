@@ -1,0 +1,185 @@
+/* You can add global styles to this file, and also import other style files */
+
+h1,h2,h3,h4,h5,h6,p,span{
+    cursor: default;
+}
+li,mat-icon , .logo{
+    cursor: pointer;
+    outline: none;
+} 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; position: relative; }
+ header{
+     position:relative;
+     top: 0;
+    background-color: #D1C4E9;
+    margin-bottom: 20px;
+ }
+
+ footer{
+     width: 100%;
+     position: fixed;
+     bottom: -20px;
+     left: 0;
+     
+ }
+ .mainColor{
+    background-color: #D1C4E9;
+ }
+ .lightText{
+     color: #020202
+ }
+.container{
+    /* padding: 0 10px; */
+    max-width: 1200px;
+    margin: 0 auto;
+     
+
+}
+.example-full-width {
+    width: 100%;
+  }
+  .resultWrap{
+      width: calc(100% - 90px);
+  }
+.f-col{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.d{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  li{
+      list-style-type: none;
+  }
+  .f-row{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+  }
+  .wrap{
+      flex-wrap: wrap;
+  }
+  .content-start{
+      justify-content: start;
+
+  }
+
+  nav{
+      padding: 0 25px 0 20px;
+  }
+  .mat-card{
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+  }
+  .mat-card-header-text{
+      margin-left: 0 !important ;
+      cursor: default;
+
+  }
+  .mat-card-actions{
+      margin: 0 !important;
+  }
+  .cardImg{
+      height: 200px;
+      width: 100%;
+
+
+  }
+  .usersTags{
+      opacity: 0.7;
+  }
+  mat-paginator{
+      width: 100%;
+      height: 50px;
+  }
+  .example-card {
+    width: 31.333%;
+    margin: 1%;
+  }
+  
+  .box {
+    position: relative;
+    overflow:hidden;
+    width:100%;
+     
+    height:200px;
+ }
+ 
+ .box img {
+    position: absolute;
+    top:15px;
+    left:15px;
+    width:100%;
+    height:200px;
+    object-fit:cover;
+ }
+ .active{
+     color: #303F9F;
+ }
+ .material-icons{
+     font-size: 40px;
+ }
+ .user{
+     position: relative;
+     top: -10px
+ }
+ .center{
+     text-align: center;
+ }
+ .viewWrap{
+    height: 100vh;
+    
+  
+    position: relative;
+    
+ }
+ .favoriteResults{
+    height: 80vh;
+    overflow: scroll;
+    overflow-x: hidden;
+
+ }
+ .searchindResults{
+     min-height: 300px;
+    height: 70vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+ 
+.viewResults{
+    width: 100%;
+}
+.resultWrap{
+    padding-bottom: 50px;
+}
+.tagsWrap{
+    height: 20px;
+    
+    margin-top: 4px;
+    position: absolute;
+    bottom: 2px;
+    left: 85px;
+    
+    overflow: hidden;
+}
+.usersTags{
+    padding: 3px 5px;
+    margin: 5px 3px;
+    background-color: #D1C4E9;
+    border-radius: 5px;
+}
+.btn{
+    position: absolute;
+    bottom: 10px;
+   
+ }

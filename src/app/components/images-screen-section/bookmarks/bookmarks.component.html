@@ -1,0 +1,46 @@
+ 
+ 
+
+<div  class="favoriteResults f-row wrap" *ngIf='data.length>0'  >
+   
+<mat-paginator [length]="data.length"
+    [pageSize]="6"
+    [pageSizeOptions]="[6, 9, 12, 15, 18]"
+    [showFirstLastButtons]="true"
+    (page)='OnPageChange($event)'>
+     
+</mat-paginator>
+
+<div class="f-row wrap viewResults"> 
+  <mat-card *ngFor="let item of pageSize" class="example-card">
+    
+  <mat-card-header>
+    
+    <mat-card-title class="cardTitle">{{item.title | stringCut  }}</mat-card-title> 
+      
+  </mat-card-header>
+  <div class="box" >
+    <img mat-card-image class="cardImg" src='https://live.staticflickr.com/{{item.server}}/{{item.id}}_{{item.secret}}_w.jpg' alt="Photo of {{item.name}}">
+  </div>
+  <mat-card-content *ngIf="item.tags" class="f-row  tagsWrap">
+    
+
+    
+    <span class="usersTags" *ngFor='let tag of item.tags; index as i'>
+      {{tag}}
+    </span>
+
+  </mat-card-content>
+  <button mat-button class="btn"  (click)="delete(item.id)">Delete</button>
+     
+ 
+  </mat-card>
+</div>
+
+ 
+  
+     
+</div>
+<div *ngIf='data.length == 0'>
+  <h2 class="center">You didn`t add anything to favorite!</h2>
+</div>

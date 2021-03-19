@@ -1,0 +1,61 @@
+<form class="example-form example-full-width" #formInputSearch='ngForm'>
+    <mat-form-field class="example-full-width">
+      <mat-label>Search ths.</mat-label>
+      <input 
+          name="search" [(ngModel)]="search" 
+          #taskSearch="ngModel"
+          matInput placeholder="Cat" 
+          (ngModelChange)="this.userQuestion.next($event)"
+          >
+    </mat-form-field>
+  
+     
+</form>
+<div *ngIf="dataList[0].id.length == 0">
+    <h2  class="center"> No Images here. Would u like try to search smth?</h2>
+
+</div> 
+ 
+<div  *ngIf="dataList[0].id.length > 0" class="searchindResults f-row wrap"  >
+    
+  <mat-paginator [length]="dataList.length"
+      [pageSize]="6"
+      [pageSizeOptions]="[6, 9, 12, 15, 18]"
+      [showFirstLastButtons]="true"
+      (page)='OnPageChange($event)'>
+       
+  </mat-paginator>
+
+
+  <div class="f-row wrap viewResults">  
+  <mat-card *ngFor="let item of pageSize" class="example-card">
+      
+    <mat-card-header>
+      <mat-card-title class="cardTitle">{{item.title | stringCut }}</mat-card-title> 
+    </mat-card-header>
+    <div class="box" >
+      <img mat-card-image class="cardImg" src='https://live.staticflickr.com/{{item.server}}/{{item.id}}_{{item.secret}}_w.jpg' alt="Photo of {{item.name}}">
+    </div>
+   
+    <mat-card-actions *ngIf="!item.tags"> 
+
+        <input matInput type="text" class="tags"    placeholder="Add tags comma separated" >
+   
+       
+    </mat-card-actions>
+    <mat-card-content *ngIf="item.tags" class="f-row  tagsWrap"> 
+
+    
+      <span class="usersTags" *ngFor='let tag of item.tags; index as i'>
+        {{tag}}
+      </span>
+  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="AddToFavorite(item, $event)" *ngIf="!item.tags" >Add to Favorite</button>
+      <button  class="btn"  mat-button (click)="removeFavorite(item, $event)" *ngIf="item.tags" >Delete</button>
+      
+    </mat-card-actions>
+    </mat-card>
+</div>
+</div>
